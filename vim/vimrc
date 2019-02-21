@@ -1,0 +1,36 @@
+" -- Generic config stuff --
+:set mouse-=a
+:syntax on
+:set hlsearch
+:set incsearch
+:set scrolloff=7
+:set autoindent
+:set shiftwidth=4
+:set softtabstop=4
+:set expandtab
+:set nu
+
+" -- Color theme --
+if has('gui_running')
+    :colorscheme solarized
+    set background=dark
+    let g:solarized_diffmode="high"
+else
+    :colorscheme darkblue
+endif
+
+" --  Lint --
+" Display error for non-breaking space or trailing space
+au VimEnter,BufWinEnter * syn match ErrorMsg " "
+au VimEnter,BufWinEnter * syn match ErrorMsg " $"
+
+" -- Keyboard shortcuts --
+" Ctrl+Tab to move between splits
+map <C-Tab> <C-W>w
+" F10 for paste toggle (toggle paste mode)
+:set pastetoggle=<F10>
+
+" -- Local settings --
+if filereadable(glob('~/.vimrc_local'))
+    source ~/.vimrc_local
+endif

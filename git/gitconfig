@@ -1,0 +1,14 @@
+[user]
+    email = david.frederique@gmail.com
+    name = David FREDERIQUE
+
+[push]
+    default = simple
+
+[alias]
+    logd = log --decorate
+    hist = log --pretty=format:'%C(yellow)%h%C(reset) |%C(green)%ad%C(reset)| %C(auto)%s%d%C(reset) %C(bold magenta)[%an]%Creset' --graph --abbrev-commit --date=short
+
+[include]
+    path = ~/.gitconfig_local
+
