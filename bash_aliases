@@ -11,7 +11,7 @@ export EDITOR=vi
 # Clean compiled files
 alias clpy='find . | grep -E "(__pycache__|\.pyc|\.pyo$)" | xargs rm -rf'
 # virtualenvwrapper
-export PROJECT_HOME=$HOME/Projects
+export PROJECT_HOME=$HOME/Documents
 export VIRTUALENV_PYTHON=/usr/bin/python3
 VENVWRP_SH=/usr/share/virtualenvwrapper/virtualenvwrapper.sh
 if [ -f $VENVWRP_SH ]
