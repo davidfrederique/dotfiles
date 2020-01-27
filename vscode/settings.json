@@ -1,0 +1,14 @@
+{
+    "terminal.explorerKind": "external",
+    "breadcrumbs.enabled": true,
+    "files.exclude": {
+        "**/__pycache__": true,
+        "**/.cache": true,
+        "**/.pytest_cache": true,
+        "**/*.egg-info": true
+    },
+    "telemetry.enableTelemetry": false,
+    "python.linting.flake8Enabled": true,
+    "python.pythonPath": "python3",
+    "python.venvPath": "~/.virtualenvs"
+}

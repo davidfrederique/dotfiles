@@ -23,6 +23,9 @@ DIRPATH = os.path.abspath(os.path.join(os.path.dirname(__file__)))
 # Python virtual environments directory
 VIRTUALENVS_DIR = os.path.join(os.environ['HOME'], '.virtualenvs')
 
+# VScode config directory
+VSCODE_CONF_DIR = os.path.join(os.environ['HOME'], '.config/Code/User')
+
 # src, dst tuples
 # Note symlink is src <- dst
 SRC_DST = (
@@ -37,6 +40,8 @@ SRC_DST = (
      os.path.join(VIRTUALENVS_DIR, 'postmkvirtualenv')),
     ('python/postdeactivate',
      os.path.join(VIRTUALENVS_DIR, 'postdeactivate')),
+    # VScode
+    ('vscode/settings.json', os.path.join(VSCODE_CONF_DIR, 'settings.json')),
 )
 
 
@@ -70,6 +75,10 @@ except FileExistsError:
     if not os.path.isdir(VIRTUALENVS_DIR):
         raise VirtualenvPathError(
             "{} exists and is not a directory".format(VIRTUALENVS_DIR))
+
+
+# Create VScode config directory
+os.makedirs(VSCODE_CONF_DIR, exist_ok=True)
 
 
 # Create / update symbolic links
